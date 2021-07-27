@@ -17,7 +17,7 @@ public class TestController {
     // @DeleteMapping
     // @RequestMapping(value = "/user/1", method = RequestMethod.GET)
     // @RequestMapping(value = "/user/1", method = RequestMethod.DELETE)
-    @GetMapping("/hello")
+     @GetMapping("/hello")
     public String hello() {
         return "Hello World!";
     }
