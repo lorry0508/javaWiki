@@ -2,6 +2,7 @@ package com.jiawa.wiki.controller;
 
 import com.jiawa.wiki.domain.Test;
 import com.jiawa.wiki.service.TestService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,16 +32,19 @@ public class TestController {
     // @DeleteMapping
     // @RequestMapping(value = "/user/1", method = RequestMethod.GET)
     // @RequestMapping(value = "/user/1", method = RequestMethod.DELETE)
+    @ApiOperation(value = "欢迎页面")
     @GetMapping("/hello")
     public String hello() {
         return "Hello World!" + testHello;
     }
 
+    @ApiOperation(value = "欢迎反馈")
     @PostMapping("/hello/post")
     public String helloPost(String name) {
         return "Hello World! Post，" + name;
     }
 
+    @ApiOperation(value = "测试列表")
     @GetMapping("/test/list")
     public List<Test> list() {
         return testService.list();
